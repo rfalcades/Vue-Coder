@@ -1,6 +1,14 @@
 new Vue({
-    el: '#desafio',
+    el: "#desafio",
     data: {
-        valor: ''
-    }
-})
+        valor: "",
+    },
+    methods: {
+        exibirAlerta() {
+            alert("Voce clicou!");
+        },
+        salvarValor(event) {
+            this.valor = event.target.value;
+        },
+    },
+});
