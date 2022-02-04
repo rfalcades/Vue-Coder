@@ -35,10 +35,10 @@ export default {
         };
     },
     methods: {
-        salvar() {
-            this.$http.post("usuarios.json", this.usuario).then(() => {
-                (this.usuario.nome = ""), (this.usuario.email = "");
-            });
+        async salvar() {
+            await this.$http.post("usuarios.json", this.usuario);
+            this.usuario.nome = "";
+            this.usuario.email = "";
         },
         obterUsuarios() {
             this.$http.get("usuarios.json").then((res) => {
